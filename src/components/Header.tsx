@@ -1,4 +1,4 @@
-import AdbIcon from "@mui/icons-material/Adb"
+import ComputerIcon from "@mui/icons-material/Computer"
 import MenuIcon from "@mui/icons-material/Menu"
 import AppBar from "@mui/material/AppBar"
 import Box from "@mui/material/Box"
@@ -9,14 +9,37 @@ import Menu from "@mui/material/Menu"
 import MenuItem from "@mui/material/MenuItem"
 import Toolbar from "@mui/material/Toolbar"
 import Typography from "@mui/material/Typography"
-import React from "react"
+import { MouseEvent, useState } from "react"
+import { Link } from "react-router-dom"
+import strings from "../constants/strings"
 
-const pages = ["Products", "Pricing", "Blog"]
+const nameSX = (xs: boolean) => ({
+  mr: 2,
+  display: { xs: xs ? "flex" : "none", md: xs ? "none" : "flex" },
+  fontFamily: "monospace",
+  fontWeight: 700,
+  letterSpacing: ".3rem",
+  color: "inherit",
+  textDecoration: "none",
+})
+
+const menuSX = {
+  display: { xs: "block", md: "none" },
+}
+
+const pageWrapperSX = { flexGrow: 1, display: { xs: "none", md: "flex" } }
+
+const pageButtonSX = { my: 2, color: "white", display: "block" }
+
+const iconSX = (xs: boolean) => ({
+  display: { xs: xs ? "flex" : "none", md: xs ? "none" : "flex" },
+  mr: 1,
+})
 
 const Header = () => {
-  const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null)
+  const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null)
 
-  const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
+  const handleOpenNavMenu = (event: MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget)
   }
 
@@ -28,25 +51,17 @@ const Header = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+          <ComputerIcon sx={iconSX(false)} />
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
+            component={Link}
+            to="/"
+            sx={nameSX(false)}
+            state={{ page: "Home" }}
           >
-            LOGO
+            {strings.name}
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -72,43 +87,31 @@ const Header = () => {
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
-              sx={{
-                display: { xs: "block", md: "none" },
-              }}
+              sx={menuSX}
             >
-              {pages.map((page) => (
+              {strings.pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center" component={Link} to={`/${page}`} state={{ page }}>
+                    {page}
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          <ComputerIcon sx={iconSX(true)} />
           <Typography
-            variant="h5"
+            variant="h6"
             noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
+            component={Link}
+            to="/"
+            sx={nameSX(true)}
+            state={{ page: "Home" }}
           >
-            LOGO
+            {strings.name}
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
+          <Box sx={pageWrapperSX}>
+            {strings.pages.map((page) => (
+              <Button key={page} component={Link} sx={pageButtonSX} to={`/${page}`} state={{ page }}>
                 {page}
               </Button>
             ))}
