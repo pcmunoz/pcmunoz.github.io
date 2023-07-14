@@ -1,4 +1,3 @@
-// import './App.css';
 import Container from "@mui/material/Container"
 
 const mainSx = { mt: 8, mb: 2 }
