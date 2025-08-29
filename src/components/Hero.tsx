@@ -1,7 +1,6 @@
 import React from "react";
 
-import { Download } from "@mui/icons-material";
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 const Hero: React.FC = () => {
   return (
@@ -20,16 +19,6 @@ const Hero: React.FC = () => {
       <Typography variant="h6" gutterBottom>
         Web Developer | Team Lead
       </Typography>
-      <Button
-        variant="contained"
-        color="secondary"
-        startIcon={<Download />}
-        href="/resume-PatrickCeasarMunoz.pdf"
-        download
-        sx={{ mt: 3 }}
-      >
-        Download Resume
-      </Button>
     </Box>
   );
 };
