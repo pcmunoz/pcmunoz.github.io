@@ -1,6 +1,7 @@
-import { Box, Typography, Button } from "@mui/material";
-import { Download } from "@mui/icons-material";
 import React from "react";
+
+import { Download } from "@mui/icons-material";
+import { Box, Button, Typography } from "@mui/material";
 
 const Hero: React.FC = () => {
   return (
@@ -14,16 +15,16 @@ const Hero: React.FC = () => {
       }}
     >
       <Typography variant="h3" gutterBottom>
-        John Doe
+        PC Muñoz
       </Typography>
       <Typography variant="h6" gutterBottom>
-        Web Developer | Designer | Freelancer
+        Web Developer | Team Lead
       </Typography>
       <Button
         variant="contained"
         color="secondary"
         startIcon={<Download />}
-        href="/resume.pdf"
+        href="/resume-PatrickCeasarMunoz.pdf"
         download
         sx={{ mt: 3 }}
       >

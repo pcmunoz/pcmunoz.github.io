@@ -6,6 +6,7 @@ export type Project = {
 
 export type Skill = {
   name: string;
+  years: number;
   level: number; // percentage
 };
 

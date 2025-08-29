@@ -1,6 +1,7 @@
-import { Box, Typography, IconButton } from "@mui/material";
-import { GitHub, LinkedIn, Email } from "@mui/icons-material";
 import React from "react";
+
+import { Email, GitHub, LinkedIn } from "@mui/icons-material";
+import { Box, IconButton, Typography } from "@mui/material";
 
 const Contact: React.FC = () => {
   return (
@@ -8,15 +9,15 @@ const Contact: React.FC = () => {
       <Typography variant="h4" gutterBottom>
         Contact
       </Typography>
-      <Typography>Email: johndoe@example.com</Typography>
+      <Typography>Email: patrickceasarmunoz@outlook.com</Typography>
       <Box mt={2}>
-        <IconButton href="https://github.com/yourusername" target="_blank">
+        <IconButton href="https://github.com/pcmunoz" target="_blank">
           <GitHub />
         </IconButton>
-        <IconButton href="https://linkedin.com/in/yourusername" target="_blank">
+        <IconButton href="https://linkedin.com/in/pcmunoz" target="_blank">
           <LinkedIn />
         </IconButton>
-        <IconButton href="mailto:johndoe@example.com">
+        <IconButton href="mailto:patrickceasarmunoz@outlook.com">
           <Email />
         </IconButton>
       </Box>

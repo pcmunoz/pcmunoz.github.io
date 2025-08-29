@@ -1,15 +1,17 @@
-import { Box, Typography, Paper } from "@mui/material";
+import React from "react";
+
+import { School, Work } from "@mui/icons-material";
 import {
   Timeline,
-  TimelineItem,
-  TimelineSeparator,
   TimelineConnector,
   TimelineContent,
   TimelineDot,
+  TimelineItem,
   TimelineOppositeContent,
+  TimelineSeparator,
 } from "@mui/lab";
-import { Work, School } from "@mui/icons-material";
-import React from "react";
+import { Box, Paper, Typography } from "@mui/material";
+
 import { Experience } from "../types";
 
 type ExperienceProps = {
@@ -25,17 +27,11 @@ const ExperienceSection: React.FC<ExperienceProps> = ({ experience }) => {
       <Timeline position="alternate">
         {experience.map((exp, i) => (
           <TimelineItem key={i}>
-            <TimelineOppositeContent
-              sx={{ m: "auto 0" }}
-              variant="body2"
-              color="text.secondary"
-            >
+            <TimelineOppositeContent sx={{ m: "auto 0" }} variant="body2" color="text.secondary">
               {exp.year}
             </TimelineOppositeContent>
             <TimelineSeparator>
-              <TimelineDot
-                color={exp.type === "work" ? "primary" : "secondary"}
-              >
+              <TimelineDot color={exp.type === "work" ? "primary" : "secondary"}>
                 {exp.type === "work" ? <Work /> : <School />}
               </TimelineDot>
               {i < experience.length - 1 && <TimelineConnector />}

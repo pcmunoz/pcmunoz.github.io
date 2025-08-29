@@ -1,17 +1,17 @@
-import { useState, useMemo } from "react";
-import { CssBaseline, Container, Box } from "@mui/material";
+import { useMemo, useState } from "react";
+
+import { Box, Container, CssBaseline } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
 import About from "./components/About";
-import Skills from "./components/Skills";
-import Experience from "./components/Experience";
-import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import Experience from "./components/Experience";
 import Footer from "./components/Footer";
-
-import { Skill, Experience as ExperienceItem, Project } from "./types";
+import Hero from "./components/Hero";
+import Navbar from "./components/Navbar";
+import Projects from "./components/Projects";
+import Skills from "./components/Skills";
+import { Experience as ExperienceItem, Project, Skill } from "./types";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -26,47 +26,93 @@ function App() {
           },
         },
       }),
-    [darkMode]
+    [darkMode],
   );
 
   const skills: Skill[] = [
-    { name: "React", level: 90 },
-    { name: "JavaScript", level: 85 },
-    { name: "HTML & CSS", level: 95 },
-    { name: "Material UI", level: 80 },
-    { name: "Node.js", level: 70 },
+    { name: "React", years: 8, level: 95 },
+    { name: "TypeScript", years: 7, level: 95 },
+    { name: "JavaScript (ES6+)", years: 10, level: 95 },
+    { name: "Material UI", years: 4, level: 95 },
+    { name: "HTML & CSS", years: 10, level: 95 },
+    { name: "PHP", years: 3, level: 50 },
+    { name: "RUBY", years: 2, level: 50 },
+    { name: "C#", years: 4, level: 45 },
+    { name: "Android", years: 2, level: 60 },
+    { name: "Node", years: 4, level: 70 },
   ];
 
   const experience: ExperienceItem[] = [
     {
       type: "work",
-      year: "2023 - Present",
-      title: "Frontend Developer",
-      place: "TechCorp Inc.",
-      description:
-        "Building responsive web applications with React, Material UI, and REST APIs.",
+      year: "2023-present",
+      title: "Senior ReactJS Developer",
+      place: "Amihan Solutions",
+      description: "Lead the development of front-end application",
     },
     {
       type: "work",
-      year: "2021 - 2023",
-      title: "Junior Web Developer",
-      place: "Startup Hub",
-      description:
-        "Worked on UI components, optimized performance, and supported backend integration.",
+      year: "2021-2023",
+      title: "Lead Developer",
+      place: "Telus Digital PH",
+      description: "Lead the team for development of CASA product",
+    },
+    {
+      type: "work",
+      year: "2019-2021",
+      title: "Senior Software Engineer",
+      place: "Deltek",
+      description: "Lead the development of a Deltek product",
+    },
+    {
+      type: "work",
+      year: "2019",
+      title: "ReactJS Developer",
+      place: "Ombori Services",
+      description: "Building and maintenance of in-house product",
+    },
+    {
+      type: "work",
+      year: "2019",
+      title: "ReactJS Developer",
+      place: "LegalMatch",
+      description: "Development of mobile application using React Native",
+    },
+    {
+      type: "work",
+      year: "2017 - 2018",
+      title: "Mid Web Developer",
+      place: "Chromedia",
+      description: "Building responsive web applications with React, Ruby on Rails",
+    },
+    {
+      type: "work",
+      year: "2015 - 2016",
+      title: "Software Engineer",
+      place: "Blotocol Philippines",
+      description: "Worked on website language migration from PHP to C#.",
     },
     {
       type: "education",
-      year: "2017 - 2021",
-      title: "Bachelor of Computer Science",
-      place: "State University",
+      year: "2010 - 2014",
+      title: "Bachelor of Science in Information Technology",
+      place: "FEU Institute of Technology",
       description: "Specialized in web technologies and software engineering.",
     },
   ];
 
   const projects: Project[] = [
-    { title: "Project One", description: "A short description.", link: "#" },
-    { title: "Project Two", description: "Another cool project.", link: "#" },
-    { title: "Project Three", description: "Something awesome.", link: "#" },
+    { title: "Workin.jp", description: "A japanese job search site", link: "https://workin.jp/" },
+    {
+      title: "Deltek Specpoint",
+      description: "A construction related site",
+      link: "https://www.deltek.com/en/architecture-and-engineering/specification-solutions/specpoint",
+    },
+    {
+      title: "Portland Pedal Power",
+      description: "A local delivery with e-commerce",
+      link: "https://www.portlandpedalpower.com/",
+    },
   ];
 
   return (

@@ -1,18 +1,19 @@
 import React, { useState } from "react";
+
+import MenuIcon from "@mui/icons-material/Menu";
 import {
   AppBar,
-  Toolbar,
-  Typography,
-  IconButton,
-  Switch,
   Box,
+  Button,
   Drawer,
+  IconButton,
   List,
   ListItem,
   ListItemText,
-  Button,
+  Switch,
+  Toolbar,
+  Typography,
 } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
 
 type NavbarProps = {
   darkMode: boolean;
@@ -67,11 +68,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
             }}
           >
             {navItems.map((item) => (
-              <Button
-                key={item}
-                color="inherit"
-                onClick={() => handleScroll(item)}
-              >
+              <Button key={item} color="inherit" onClick={() => handleScroll(item)}>
                 {item}
               </Button>
             ))}
@@ -83,9 +80,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
           </Box>
 
           {/* Mobile Nav (xs to sm) */}
-          <Box
-            sx={{ display: { xs: "flex", md: "none" }, alignItems: "center" }}
-          >
+          <Box sx={{ display: { xs: "flex", md: "none" }, alignItems: "center" }}>
             <Switch
               checked={darkMode}
               onChange={(e) => setDarkMode(e.target.checked)}
@@ -103,11 +98,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
         <Box sx={{ width: 250, mt: 2 }}>
           <List>
             {navItems.map((text) => (
-              <ListItem
-                component={Button}
-                key={text}
-                onClick={() => handleScroll(text)}
-              >
+              <ListItem component={Button} key={text} onClick={() => handleScroll(text)}>
                 <ListItemText primary={text} />
               </ListItem>
             ))}

@@ -1,13 +1,7 @@
-import {
-  Box,
-  Typography,
-  Grid,
-  Card,
-  CardContent,
-  CardActions,
-  Button,
-} from "@mui/material";
 import React from "react";
+
+import { Box, Button, Card, CardActions, CardContent, Grid, Typography } from "@mui/material";
+
 import { Project } from "../types";
 
 type ProjectsProps = {

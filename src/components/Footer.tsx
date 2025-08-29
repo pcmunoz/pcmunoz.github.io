@@ -1,5 +1,6 @@
-import { Box, Typography } from "@mui/material";
 import React from "react";
+
+import { Box, Typography } from "@mui/material";
 
 const Footer: React.FC = () => {
   return (
@@ -12,7 +13,7 @@ const Footer: React.FC = () => {
         mt: 4,
       }}
     >
-      <Typography>© 2025 John Doe. All rights reserved.</Typography>
+      <Typography>© 2025 PC Muñoz. All rights reserved.</Typography>
     </Box>
   );
 };
