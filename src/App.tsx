@@ -3,6 +3,7 @@ import { useMemo, useState } from "react";
 import { Box, Container, CssBaseline } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
+import background from "./assets/windows-bg.webp";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Experience from "./components/Experience";
@@ -124,6 +125,10 @@ function App() {
         {/* ✅ Hero full-width with responsive padding */}
         <Box
           sx={{
+            background: `url(${background})`,
+            backgroundPosition: "right",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
             bgcolor: "primary.main",
             color: "white",
             py: { xs: 6, sm: 8, md: 10 }, // smaller padding on mobile, bigger on desktop

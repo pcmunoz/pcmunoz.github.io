@@ -23,6 +23,9 @@ a:hover {
 }
 
 body {
+  background: url("./assets/code-bg.jpg");
+  background-size: cover; /* Adjust as needed */
+  background-blend-mode: difference;
   margin: 0;
   display: flex;
   place-items: center;

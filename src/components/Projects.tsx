@@ -25,7 +25,7 @@ const Projects: React.FC<ProjectsProps> = ({ projects }) => {
                 <Typography>{proj.description}</Typography>
               </CardContent>
               <CardActions>
-                <Button size="small" href={proj.link}>
+                <Button size="small" href={proj.link} target="_blank" rel="noopener noreferrer">
                   View Project
                 </Button>
               </CardActions>

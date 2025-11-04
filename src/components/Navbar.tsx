@@ -44,7 +44,8 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
         elevation={0}
         sx={{
           backdropFilter: "blur(8px)",
-          backgroundColor: "rgba(25, 118, 210, 0.7)",
+          background:
+            "linear-gradient(180deg,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);",
           boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
         }}
       >

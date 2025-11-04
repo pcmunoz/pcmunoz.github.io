@@ -7,7 +7,6 @@ const Hero: React.FC = () => {
     <Box
       id="hero"
       sx={{
-        bgcolor: "primary.main",
         color: "white",
         textAlign: "center",
         py: 8,
@@ -17,7 +16,7 @@ const Hero: React.FC = () => {
         PC Muñoz
       </Typography>
       <Typography variant="h6" gutterBottom>
-        Web Developer | Team Lead
+        Frontend Developer | Team Lead
       </Typography>
     </Box>
   );
