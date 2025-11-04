@@ -56,7 +56,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, setDarkMode }) => {
             sx={{ fontWeight: "bold", cursor: "pointer" }}
             onClick={() => handleScroll("hero")}
           >
-            My Portfolio
+            About Me
           </Typography>
 
           {/* Desktop Nav (md and up) */}
