@@ -1,6 +1,6 @@
 # pcmunoz.github.io
 
-PCM Personal Website
+Personal Website
 
 Sources:
 
